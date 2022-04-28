@@ -37,5 +37,4 @@ INSERT INTO dog_db2 (name,Breed) VALUES
 ('salitary','Tabby'),
 ('Abadiki', 'wolf pegg');
 
-SELECT *FROM dog_db2;
 
