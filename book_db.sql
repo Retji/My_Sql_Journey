@@ -1,4 +1,4 @@
-
+#creating a new table with the name book_db
 
 create table book_db (book_id int not null auto_increment primary key,
 	Title VARCHAR(50),
@@ -9,6 +9,7 @@ create table book_db (book_id int not null auto_increment primary key,
 	pages INT
 );
 
+#inserting data into the table using the insert & values syntax
 insert into book_db (Title, author_name, author_lname, released_year, stock_qty, pages) values ('Dead Man''s Burden', 'Sushams', 'Earl', 1996, 1111, 171);
 insert into book_db (Title, author_name, author_lname, released_year, stock_qty, pages) values ('Circle of Deceit (Die Fälschung)', 'Paprotny', 'Forest', 1987, 693, 454);
 insert into book_db (Title, author_name, author_lname, released_year, stock_qty, pages) values ('Classe Tous Risques (Big Risk, The)', 'Crickmore', 'Kory', 1967, 1977, 439);
@@ -58,8 +59,7 @@ insert into book_db (Title, author_name, author_lname, released_year, stock_qty,
 insert into book_db (Title, author_name, author_lname, released_year, stock_qty, pages) values ('No Looking Back', 'Prestney', 'Payton', 2000, 716, 208);
 insert into book_db (Title, author_name, author_lname, released_year, stock_qty, pages) values ('Kissing a Fool', 'Selwood', 'Tallou', 1966, 457, 163);
 
-show databases;
-use db_database;
+#to view the entire table
 SELECT *FROM book_db;
 
 
@@ -67,11 +67,12 @@ SELECT author_name as first_name,author_lname as surname,
 CONCAT(author_name,' ',author_lname) 
 AS FULL_name
 FROM book_db; 
+
 # this syntax combines the author_name with the author_lname together on another column as FULL_name
 #CONCAT_WS can be used to add ("-",_ etc)
 
-SELECT SUBSTRING(title,1,10) as 'short title'FROM book_db;
-#to obtain the short word or substring of the title column
+SELECT SUBSTRING(title,1,10) as 'short title' FROM book_db;
+#to obtain the short word or substring containing 10 characters of the title column
 
 SELECT CONCAT(
 SUBSTRING(title,1,10),
@@ -85,6 +86,7 @@ SUBSTRING(title,1,10),
  SELECT
  REPLACE(title,'e', '5') AS 'with 5s'
  FROM book_db; 
+ #this code replaces all letter 'e' in the title columns with 5
  
  #use char_length to return the length of characters
  SELECT title,
@@ -96,7 +98,7 @@ SUBSTRING(title,1,10),
  FROM book_db;
  
 
- #Exercises
+ #Some Exercises
  SELECT UPPER('why does my cat look at me that way with hatred');
  SELECT REVERSE('why does my cat look at me that way with hatred');
  SELECT REPLACE(CONCAT('I',' ','like','_'));
