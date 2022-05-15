@@ -1,6 +1,3 @@
-show databases;
-use db_database;
-show tables;
 
 SELECT COUNT(DISTINCT(author_lname))
  FROM book_db;
@@ -8,8 +5,9 @@ SELECT COUNT(DISTINCT(author_lname))
  
  SELECT title,
  CONCAT(author_name, ' ',author_lname) AS name
- FROM book_db WHERE title  LIKE '%the';
-#selects title that has anything before then followed by the-- 
+ FROM book_db 
+ WHERE title  LIKE '%the';
+#selects title that has any word before then followed by the word "the" 
  
  SELECT title, pages from book_db 
  ORDER BY pages DESC 
@@ -37,8 +35,7 @@ SELECT COUNT(DISTINCT(author_lname))
  SELECT CONCAT(author_name, ' ',author_lname) AS NAMES,
 	COUNT(*)
     FROM book_db
-    GROUP BY author_name,
-			author_lname;
+    GROUP BY author_name,author_lname;
     #using concat statement to join the author names and give a count of the author name
     
 SELECT released_year, COUNT(*) AS NUMBER_OF_BOOKS FROM book_db
